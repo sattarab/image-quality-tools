@@ -1,3 +1,20 @@
+Important information regarding the image naming convention:
+
+A file called "imageName.data" would contain an index of the all the images on you wish to run the quality tests on
+so for each image its name would be of this form
+
+"image1 - Orig.jpg"
+"image1 - 1Copy.jpg"
+"image1 - 2Copy.jpg"
+"image1 - 3Copy.jpg"
+"image1 - 4Copy.jpg"
+
+"image2 - Orig.jpg"
+"image2 - 1Copy.jpg"
+
+
+Notice: see how the number before the Copy substring in the name changes but there would be only one original image
+
 <b>PSNR:</b>
 A PSNR value of Inf means that the images are exactly equal
 
