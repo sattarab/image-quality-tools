@@ -1,5 +1,25 @@
 Important information regarding the image naming convention:
 
+To run these tests:
+
+Go to the folder where sim_msssim.m, psnr.m and sim_ssim.m files are
+
+(1) To run MSSIM test do "[MSSSIM_VALUE] = sim_msssim" in Matlab. The value returned by the sim_msssim function is set 
+to MSSSIM_VALUE 
+(2) To run SSIM test do "[SSIM_VALUE] = sim_ssim" in Matlab. The value returned by the sim_ssim function is set 
+to sSIM_VALUE 
+(3) To run PSNR test do "[PSNR_VALUE] = psnr" in Matlab. The value returned by the psnr function is set 
+to PSNR_VALUE
+(4) To metrix_mux library (details of the library provided below) go to the metrix_mux folder do something like [values] = sim_metrix_mux('SSIM').
+When simulating this you have to provide testName to run that test otherwise PSNR is the default test when run [values] = sim_metrix_mux 
+
+For our usecase it would be following
+
+1. [values] = sim_metrix_mux('SSIM');
+2. [values] = sim_metrix_mux('PSNR');
+3. [values] = sim_metrix_mux('MSSIM');
+
+
 A file called "imageName.data" would contain an index of the all the images on you wish to run the quality tests on
 so for each image its name would be of this form
 
