@@ -10,8 +10,8 @@ to MSSSIM_VALUE
 to sSIM_VALUE 
 (3) To run PSNR test do "[PSNR_VALUE] = psnr" in Matlab. The value returned by the psnr function is set 
 to PSNR_VALUE
-(4) To metrix_mux library (details of the library provided below) go to the metrix_mux folder do something like [values] = sim_metrix_mux('SSIM').
-When simulating this you have to provide testName to run that test otherwise PSNR is the default test when run [values] = sim_metrix_mux 
+(4) To metrix_mux library (details of the library provided below) go to the metrix_mux folder do something like "[values] = sim_metrix_mux('SSIM')".
+When simulating this you have to provide testName to run that test otherwise PSNR is the default test when run like "[values] = sim_metrix_mux"
 
 For our usecase it would be following
 
