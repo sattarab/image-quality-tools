@@ -1,4 +1,6 @@
 function [SSIM_Value] = sim_ssim()
+    % go to image directory not the best way but works %
+    currDir = cd ('images');
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     SSIM_Value = zeros(n, 5);
@@ -19,4 +21,6 @@ function [SSIM_Value] = sim_ssim()
         end
     end
     SSIM_Value = SSIM_Value(1:i, :);
+    % go to src directory %
+    cd ..;
 end

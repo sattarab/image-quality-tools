@@ -1,4 +1,6 @@
 function [MSSSIM_Value] = sim_msssim()
+    % go to image directory not the best way but works %
+    currDir = cd ('images');
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     MSSSIM_Value = zeros(n, 5);
@@ -19,4 +21,6 @@ function [MSSSIM_Value] = sim_msssim()
         end
     end
     MSSSIM_Value = MSSSIM_Value(1:i, :);
+    % go to image work %
+    cd ..;
 end

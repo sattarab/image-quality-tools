@@ -1,4 +1,6 @@
 function [PSNR_Value] = psnr()
+    % go to image directory not the best way but works %
+    currDir = cd ('images');
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     PSNR_Value = zeros(n, 5);
@@ -39,4 +41,6 @@ function [PSNR_Value] = psnr()
         end
     end
     PSNR_Value = PSNR_Value(1:i, :);
+    % go to src directory %
+    cd ..;
 end

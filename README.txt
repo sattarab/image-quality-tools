@@ -3,8 +3,7 @@ Important information regarding the image naming convention:
 To run these tests:
 
 Go to the folder where sim_msssim.m, psnr.m and sim_ssim.m files are
-
-(1) To run MSSIM test do "[MSSSIM_VALUE] = sim_msssim" in Matlab. The value returned by the sim_msssim function is set 
+(1) To run MSSIM test go do "[MSSSIM_VALUE] = sim_msssim" in Matlab. The value returned by the sim_msssim function is set 
 to MSSSIM_VALUE 
 (2) To run SSIM test do "[SSIM_VALUE] = sim_ssim" in Matlab. The value returned by the sim_ssim function is set 
 to sSIM_VALUE 

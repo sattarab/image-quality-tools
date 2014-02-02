@@ -2,7 +2,10 @@ function [value] = sim_metrix_mux(testName)
     if ~exist('testName','var')
         testName='PSNR';
     end
+    
     configure_metrix_mux;
+    cd ..;
+    cd ('images');
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     value = zeros(n, 5);
@@ -23,4 +26,6 @@ function [value] = sim_metrix_mux(testName)
         end
     end
     value = value(1:i, :);
+    cd ..;
+    cd ('metrix_mux');
 end
