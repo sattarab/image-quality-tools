@@ -1,7 +1,7 @@
-Important information regarding the image naming convention:
+Please add all the images in the "image" folder which is in the root/home directory and
+follow the convention given below. 
 
 To run these tests:
-
 Go to the folder where sim_msssim.m, psnr.m and sim_ssim.m files are
 (1) To run MSSIM test go do "[MSSSIM_VALUE] = sim_msssim" in Matlab. The value returned by the sim_msssim function is set 
 to MSSSIM_VALUE 
@@ -18,7 +18,8 @@ For our usecase it would be following
 2. [values] = sim_metrix_mux('PSNR');
 3. [values] = sim_metrix_mux('MSSIM');
 
-
+---------------------- Image Name Convention -----------------------
+Important information regarding the image naming convention:
 A file called "imageName.data" would contain an index of the all the images on you wish to run the quality tests on
 so for each image its name would be of this form
 
