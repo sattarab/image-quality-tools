@@ -4,6 +4,7 @@ function [SSIM_Value] = sim_ssim()
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     SSIM_Value = zeros(n, 5);
+    
     for i = 1:length(imageName)
         src = strcat('image',int2str(i),'*Orig.jpg');
         copy = strcat('image',int2str(i),'*Copy.jpg');
@@ -20,6 +21,7 @@ function [SSIM_Value] = sim_ssim()
             SSIM_Value(i, k) = ssim(origFileName, C{k});
         end
     end
+    
     SSIM_Value = SSIM_Value(1:i, :);
     % go to src directory %
     cd ..;

@@ -4,6 +4,7 @@ function [PSNR_Value] = psnr()
     [imageName] = textread('imageNames.data', '%s');
     n = 100;
     PSNR_Value = zeros(n, 5);
+   
     for i = 1:length(imageName)
         src = strcat('image',int2str(i),'*Orig.jpg');
         copy = strcat('image',int2str(i),'*Copy.jpg');
@@ -40,6 +41,7 @@ function [PSNR_Value] = psnr()
             PSNR_Value(i, k) = 10 * log10( 255^2 / mse);
         end
     end
+    
     PSNR_Value = PSNR_Value(1:i, :);
     % go to src directory %
     cd ..;
