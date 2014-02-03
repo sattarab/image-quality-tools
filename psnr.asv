@@ -1,20 +1,28 @@
 function [PSNR_Value] = psnr()
     % go to image directory not the best way but works %
     currDir = cd ('images');
-    [threshold] = textread('threshold.data', '%s');
+    [imageName] = textread('threshold.data', '%s');
     n = 100;
     PSNR_Value = zeros(n, 5);
-    images = 1; %global variable for num of images
-    for i = 1:images
+   
+    for i = 1:length(imageName)
         src = strcat('image',int2str(i),'*Orig.jpg');
         origFile = dir(src);
-        origFileName = imread(origFile(1).name);
         for j =  1:length(threshold)
-            copy = strcat('image',int2str(i),'*', threshold{j}, 'Copy.jpg');
-            fileNames = dir(copy);
-            filename = fileNames.name;
+        copy = strcat('image',int2str(i),'*Copy.jpg');
+        fileNames = dir(copy);
+        origFile = dir(src);
+        origFileName = imread(origFile(1).name);
+        C = cell(length(fileNames), 1);
+        for k = 1:length(fileNames)
+            filename = fileNames(k).name;
+            C{k} = imread(filename);
+        end
+
+
+        for k = 1:length(fileNames)
             I = origFileName;
-            Ihat = imread(filename);
+            Ihat = C{k};
 
             % Read the dimensions of the image.
             [rows columns ~] = size(I);
@@ -32,8 +40,7 @@ function [PSNR_Value] = psnr()
             mse = (mseR + mseG + mseB)/3;
 
             % Calculate PSNR (Peak Signal to noise ratio).
-            PSNR_Value(i, j) = 10 * log10( 255^2 / mse);
-
+            PSNR_Value(i, k) = 10 * log10( 255^2 / mse);
         end
     end
     
