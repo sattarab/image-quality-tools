@@ -24,7 +24,7 @@ A file called "imageName.data" would contain an index of the all the images on y
 so for each image its name would be of this form
 
 "image1 - Orig.jpg"
-"image1 - 1Copy.jpg"
+"image1 - FbCopy.jpg"
 "image1 - 2Copy.jpg"
 "image1 - 3Copy.jpg"
 "image1 - 4Copy.jpg"
@@ -32,6 +32,7 @@ so for each image its name would be of this form
 "image2 - Orig.jpg"
 "image2 - 1Copy.jpg"
 
+The number or substring prefixed with substring "Copy" in image name should be added to threshold.data 
 
 Notice: see how the number before the Copy substring in the name changes but there would be only one original image
 
