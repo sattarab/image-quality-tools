@@ -1,20 +1,34 @@
-function [PSNR_Value] = psnr()
-    % go to image directory not the best way but works %
+function [PSNR_Value] = psnr(num_images)
+    % if the num_images variable is not specified use the default value of
+    % 1
+    if ~exist('num_images','var')
+        num_images = 1;
+    end 
     currDir = cd ('images');
     [threshold] = textread('threshold.data', '%s');
     n = 100;
     PSNR_Value = zeros(n, 5);
-    images = 1; %global variable for num of images
-    for i = 1:images
+
+    for i = 1:num_images
         src = strcat('image',int2str(i),'*Orig.jpg');
         origFile = dir(src);
-        origFileName = imread(origFile(1).name);
+        try
+            origFileName = imread(origFile(1).name);
+        catch exception
+            error('the original image file doesnot exist');
+        end
         for j =  1:length(threshold)
             copy = strcat('image',int2str(i),'*', threshold{j}, 'Copy.jpg');
             fileNames = dir(copy);
             filename = fileNames.name;
             I = origFileName;
-            Ihat = imread(filename);
+            
+            try
+                Ihat = imread(filename);
+            catch exception
+                error('the copy of image file doesnot exist');
+            end
+            
 
             % Read the dimensions of the image.
             [rows columns ~] = size(I);
