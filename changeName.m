@@ -18,7 +18,7 @@ function changeName(location)
     % Rename in a LOOP
     for n = 1:numel(names)
         oldname = [location names{n}];
-        newname = strcat('images', int2str(n), '.jpg');
+        newname = strcat('image', int2str(n), 'Orig.jpg');
         dos(['rename "' oldname '" "' newname '"']); % (1)
     end
 end
