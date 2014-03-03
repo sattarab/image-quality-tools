@@ -17,10 +17,11 @@ function [count_DC_one count_DC_zero count_DC_minus_one count_AC_one count_AC_ze
     count_AC_minus_one = sum(ac_matrix == -1);
     figure(1);
     hist(dc_matrix, 2000);
-    figure(2);
-    hist(ac_matrix(1, :));
-    figure(3);
-    hist(ac_matrix(35, :));
-    figure(4);
-    hist(ac_matrix(63, :));
+    for i=2:63
+        h = figure(i);
+        hist(ac_matrix(i, :));
+        name = strcat('ac', int2str(i));
+        figure('visible','off');
+        saveas(h,name,'jpg');
+    end
 end
